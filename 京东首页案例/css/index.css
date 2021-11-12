@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 2000px;
+    width: 100%;
+    /* 最小缩放为320px 防止内容变形 */
+    min-width: 320px;
+    /* 最大宽度640px */
+    max-width: 640px;
+    /* 主体居中 */
+    margin: 0 auto;
+    /* 初始化字体 */
+    font-family: -apple-system, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+    /* 去除点击高亮显示 */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+img {
+    /* 因为图片默认的与文字的基线对齐 所以需要设置图片与文字的中线对齐 使图片布局排版时不会出现多余的空白缝隙 */
+    /* 去除图片底部的空白缝隙 */
+    vertical-align: middle;
+}
+
+li {
+    list-style: none;
+}
+
+.app {
+    height: 45px;
+}
+
+.app ul {
+    width: 100%;
+}
+
+.app ul li {
+    float: left;
+    height: 45px;
+    /* 设置内容水平居中 垂直居中 */
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    background-color: #333;
+}
+
+.app ul li:nth-child(1) {
+    position: relative;
+    width: 8%;
+}
+
+
+/* .app ul li:nth-child(1) img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+} */
+
+.app ul li:nth-child(2) {
+    width: 10%;
+}
+
+.app ul li:nth-child(2) img {
+    /* 图片默认与文字的基线对齐 需要修改为中线对齐 才能居中对齐 */
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(3) {
+    width: 57%;
+}
+
+.app ul li:nth-child(4) {
+    width: 25%;
+    background-color: rgb(230, 75, 45);
+}
+
+
+/* 搜索 */
+
+.search-wrap {
+    overflow: hidden;
+    /* 这里的搜索导航栏要固定在图片的上面 */
+    /* 使用固定定位可以使这个盒子的整体脱离标准流 使后面的盒子布局上来 */
+    position: fixed;
+    height: 44px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+}
+
+.search-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 44px;
+}
+
+.search-btn::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+
+.search-login {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 44px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 44px;
+}
+
+.search {
+    position: relative;
+    height: 30px;
+    background-color: #fff;
+    margin: 0 50px;
+    border-radius: 15px;
+    /* 会出现外边距塌陷的问题 所以要给父盒子设置清除浮动的效果 */
+    margin-top: 7px;
+}
+
+.search .jd-icon {
+    position: absolute;
+    top: 7px;
+    left: 12px;
+    width: 20px;
+    height: 15px;
+    background: url(../images/jd.png);
+    background-size: 20px 15px;
+}
+
+.search .jd-icon::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 26px;
+    height: 16px;
+    border-right: 1px solid #ddd;
+}
+
+.sou {
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    width: 18px;
+    height: 15px;
+    background-color: pink;
+    /* 二倍精灵图就是把图片先缩放成一半的大小 再通过定位去找到精灵图的位置 */
+    background: url(../images/jd-sprites.png) no-repeat -83px 0px;
+    background-size: 200px 200px;
+}
+
+.slider img {
+    width: 100%;
+}
+
+/* 品牌日 */
+.brand {
+    position: relative;
+    margin-top: -10px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.brand div {
+    width: 33.3333%;
+    float: left;
+}
+
+.brand div a img {
+    /* 保证图片的宽度和父盒子的宽度一致 */
+    width: 100%;
+}
+
+/* nav */
+nav {
+    /* 清除浮动 防止nav里面元素的浮动影响后面盒子的布局 */
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+nav a {
+    float: left;
+    width: 20%;
+    /* 保证文字和图片都是居中对齐 */
+    text-align: center;
+}
+
+nav a img {
+    width: 40px;
+    margin: 10px 0;
+}
+
+nav a span {
+    display: block;
+    font-size: 12px;
+}
+
+/* news */
+.news {
+    margin-top: 20px;
+}
+
+.news img {
+    width: 100%;
+}
+
+.news a {
+    /* a是行内元素 使用浮动可以将a转变具有块元素的特性 */
+    float: left;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+/* .news a:nth-child(2),
+.news a:nth-child(3) {
+    width: 25%;
+} */
+
+/* 这里使用公式 n+2 就是从第二个子盒子开始设置 */
+.news a:nth-child(n+2) {
+    box-sizing: border-box;
+    border-left: 1px solid #ddd;
+    /* 这里不可以使用calc函数 */
+    width: 25%;
+}

@@ -1,0 +1,159 @@
+//首页的样式less文件
+//这里导入其他的less文件
+@import "common.less";
+//@import 导入的意思 可以把一个样式文件导入另外一个样式文件里面
+//link 是把一个 样式文件引入到 html页面里面
+
+body {
+    // 固定最小屏幕为320px
+    min-width: 320px;
+    //使用rem来控制百分百宽度
+    //使用rem布局只需要使用rem来控制
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+    height: 2000px;
+}
+
+//页面元素rem的计算：页面元素的px / html 字体的大小
+//search-content 搜索框
+//这里的50是最开始的rem值
+@baseFont: 50;
+
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    // margin-left: -7.5rem;
+    transform: translateX(-50%);
+    width: 15rem;
+    //我们通过（88/50）来获取我们需要的rem值 88后面携带的rem是单位
+    height: (88rem / @baseFont);
+    background-color: #ffc001;
+
+    .classify {
+        width: (44rem / @baseFont);
+        height: (70rem / @baseFont);
+        background: url(../images/classify.png) no-repeat;
+        //背景缩放
+        background-size: (44rem / @baseFont);
+        margin: (11rem / @baseFont) (25rem / @baseFont)(7rem / @baseFont) (24rem / @baseFont);
+    }
+
+    .search {
+        flex: 1;
+
+        input {
+            //去除表单输入框输入时有边框
+            outline: none;
+            width: 100%;
+            height: (66rem / @baseFont);
+            border-radius: (33rem / @baseFont);
+            border: 0;
+            background-color: #fff2cc;
+            margin-top: (11rem / @baseFont);
+            font-size: (25rem / @baseFont);
+            color: #757575;
+            padding-left: (54rem / @baseFont);
+        }
+
+    }
+
+    .login {
+        width: (75rem / @baseFont);
+        height: (70rem / @baseFont);
+        margin: (9rem / @baseFont) (10rem / @baseFont);
+        font-size: (25rem / @baseFont);
+        text-align: center;
+        color: #fff;
+        line-height: (70rem / @baseFont);
+    }
+}
+
+
+//banner 部分
+
+.banner {
+    width: (750rem / @baseFont);
+    height: (369rem / @baseFont);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//广告部分
+
+.ad {
+    display: flex;
+
+    a {
+        flex: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+//nav部分
+
+nav {
+    width: (750rem / @baseFont);
+    height: (320rem / @baseFont);
+
+    a {
+        float: left;
+        display: flex;
+        width: (150rem / @baseFont);
+        height: (142rem / @baseFont);
+        //改变主轴
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        color: #666666;
+
+        img {
+            width: (84rem / @baseFont);
+            height: (84rem / @baseFont);
+        }
+
+        span {
+            font-size: (22rem / @baseFont);
+            line-height: (28rem / @baseFont);
+            margin-top: 5px;
+        }
+    }
+}
+
+//新人优惠
+
+.new {
+    display: flex;
+    width: (750rem / @baseFont);
+    height: (234rem / @baseFont);
+    margin: (24rem / @baseFont) 0;
+
+    &a:nth-child(1) {
+        flex: 2;
+    }
+
+    &a:nth-child(2) {
+        flex: 1;
+    }
+
+    &a:nth-child(3) {
+        flex: 1;
+    }
+
+    a {
+        img {
+            width: 100%;
+        }
+    }
+}

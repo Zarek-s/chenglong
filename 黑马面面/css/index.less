@@ -1,0 +1,271 @@
+body {
+    box-sizing: border-box;
+    min-width: 320px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #F2F4F7;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+//约束屏幕 大于750px的时候 屏幕固定为750px html的值固定不变 
+//注意：这里的flexible分了20份
+@media screen and (min-width:750px) {
+    html {
+        //注意：这里引用了js部分 需要应用！important来提高权重
+        font-size: 37.5px !important;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #707070;
+}
+
+.wrap {
+    background-color: #fff;
+}
+
+//头部部分
+.header {
+    height: 2.133333rem;
+    border-bottom: 1px solid #EAEAEA;
+    text-align: center;
+    color: #1C1C1C;
+    font: normal 400 .933333rem/2.133333rem '微软雅黑';
+    margin-bottom: .693333rem;
+
+    div {
+        margin: 0 auto;
+    }
+}
+
+//导航栏部分
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        display: flex;
+        width: 6.666667rem;
+        height: 6.666667rem;
+        flex-direction: column;
+        font-size: .666667rem;
+        align-items: center;
+        padding-bottom: .746667rem;
+        justify-content: end;
+
+        img {
+            width: 3.626667rem;
+            height: 3.626667rem;
+        }
+
+        span {
+            margin: .48rem 0 .64rem 0;
+        }
+    }
+}
+
+//go导航部分
+.go {
+    padding-top: .533333rem;
+    padding-bottom: 1.12rem;
+
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 19.253333rem;
+        height: 4.053333rem;
+    }
+}
+
+//公共样式content的编写
+.content {
+    background-color: #fff;
+    margin-top: .266667rem;
+    padding-bottom: 1.066667rem;
+
+    .content-hd {
+        height: 3.093333rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        img {
+            width: 1.013333rem;
+            height: 1.013333rem;
+            position: absolute;
+            left: .586667rem;
+        }
+
+        span {
+            font-size: .64rem;
+            position: absolute;
+            left: 2.08rem;
+        }
+
+        a {
+            font-size: .586667rem;
+            color: #999;
+            position: absolute;
+            right: .64rem;
+        }
+    }
+}
+
+//这里是父级约束
+.get_job_focus {
+    position: relative;
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        color: black;
+        height: 1.173333rem;
+        font-size: 1.173333rem;
+    }
+
+    p {
+        text-align: center;
+        font-size: .666667rem;
+        color: #333;
+        margin-top: .64rem;
+        width: 100%;
+    }
+
+    .swiper-container {
+        //修改了宽度 为540px
+        width: 14.4rem;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        //竖向显示
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        //没选中
+        transform: scale(0.8);
+        //设置一个透明度
+        opacity: 0.4;
+
+        a {
+            width: 9.013333rem;
+            height: 10.026667rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        //充电学习得 制作
+    }
+
+    //当前选中的一层
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active {
+        transform: scale(1);
+        z-index: 999;
+        //提高层级性
+        opacity: 1;
+    }
+}
+
+//底部导航栏制作
+nav.nav1 {
+    border-top: 1px solid #F2F4F7;
+    position: fixed;
+    bottom: 0;
+    max-width: 750px;
+    z-index: 1000;
+    margin-top: 1px;
+    width: 100%;
+    height: 3.013333rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: .586667rem;
+    color: rgb(107, 107, 107);
+
+    div {
+        flex: 1;
+        text-align: center;
+    }
+
+    img {
+        margin: 0 auto;
+        width: 1.173333rem;
+        height: 1.173333rem;
+    }
+
+    div:nth-child(1) {
+        color: rgb(87, 209, 219);
+    }
+}
+
+
+//学习模块的轮播图f
+.study {
+    margin-bottom: 3.013333rem;
+    .swiper {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        
+      }
+
+    .swiper-wrapper {
+        margin-top: .266667rem;
+        margin-left: .64rem;
+    }
+    .swiper-slide {
+        margin: .266667rem 0;
+        padding: 0 .4rem;
+        font-size: 18px;
+        background: #fff;
+        width: 7.626667rem;
+        height: 8.986667rem;
+        border-radius: .266667rem;
+        box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+        
+        img {
+            width: 7.306667rem;
+            height: 4.533333rem;
+            margin: .266667rem auto;
+        }
+        h2 {
+            margin: .533333rem .64rem 0 .48rem;
+            font: normal 400 .64rem "微软雅黑";
+        }
+
+        p {
+            font-size: .533333rem;
+            color: #999;
+            margin: .4rem 0 0 .666667rem;
+        }
+        span {
+            color: red;
+        }
+      }
+
+}

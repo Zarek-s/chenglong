@@ -1,0 +1,526 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0 auto;
+    color: #000;
+    font: normal 14px/1.5 "Microsoft Yahei";
+    background-color: #f2f2f2;
+    max-width: 540px;
+    min-width: 320px;
+    /* 水平方向永远不会出现滚动条 */
+    /* 水平溢出隐藏 */
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+li {
+    list-style: none;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+/* 搜索模块 */
+.search-index {
+    display: flex;
+    position: fixed;
+    top: 0;
+    /* 固定定位不写默认就是居中的 要写可以使用算法 但是因为不知道盒子的具体宽度 就不适用margin 使用translaterX */
+    left: 50%;
+    /* 这个带有Webkit的 是为了兼容老版的浏览器 */
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    /* 因为固定定位是相对屏幕的宽度 所以需要重新限制最大最小的屏幕尺寸 */
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+a.user {
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    font-size: 12px;
+    color: rgb(9, 159, 222);
+}
+
+a.user::before {
+    /* 伪元素默认行内元素 需要转换为块级元素 */
+    display: block;
+    content: "";
+    width: 23px;
+    height: 23px;
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    background-size: 104px auto;
+    margin: 3px auto -1px;
+}
+
+.search {
+    position: relative;
+    height: 26px;
+    border: 1px solid #ccc;
+    flex: 1;
+    margin: 7px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    padding-left: 27px;
+    /* 用的css3的盒子模型 这里的盒子高度包含了边框 所以设置行号要减去边框的高度 */
+    line-height: 24px;
+    color: rgb(152, 152, 152);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+}
+
+.search::before {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -59px -280px;
+    background-size: 104px auto;
+}
+
+.focus {
+    margin-top: 44px;
+}
+
+.focus img {
+    width: 100%;
+}
+
+/* 功能块部分 */
+/* .local-nav {
+    display: flex;
+    height: 56px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0 6px;
+}
+
+.local-nav li {
+    margin-top: 6px;
+    position: relative;
+    flex: 1;
+    font-size: 12px;
+    text-align: center;
+}
+
+.local-nav li::before {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 32px;
+    height: 32px;
+    background-color: purple;
+    background: url(../images/localnav_bg.png) no-repeat;
+    background-size: 32px auto;
+}
+
+.local-nav li:nth-child(1):before {
+    background-position: 0px 0px;
+}
+
+.local-nav li:nth-child(2):before {
+    background-position: 0px -32px;
+}
+
+.local-nav li:nth-child(3):before {
+    background-position: 0px -64px;
+}
+
+.local-nav li:nth-child(4):before {
+    background-position: 0px -96px;
+}
+
+.local-nav li:nth-child(5):before {
+    background-position: 0px -128px;
+}
+
+.local-nav li a {
+    color: #000;
+} */
+
+/* 使用弹性布局的局部导航栏 */
+
+.local-nav {
+    display: flex;
+    height: 56px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0 6px;
+    background-color: white;
+}
+
+.local-nav li {
+    margin-top: 6px;
+    flex: 1;
+}
+
+.local-nav li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+/* .local-nav-icon {
+    width: 32px;
+    height: 32px;
+    background-color: skyblue;
+    background: url(../images/localnav_bg.png) no-repeat;
+    background-size: 32px auto;
+}
+
+.local-nav li:nth-child(1) a span:nth-child(1) {
+    background-position: 0px 0px;
+}
+
+.local-nav li:nth-child(2) a span:nth-child(1) {
+    background-position: 0px -32px;
+}
+
+.local-nav li:nth-child(3) a span:nth-child(1) {
+    background-position: 0px -64px;
+}
+
+.local-nav li:nth-child(4) a span:nth-child(1) {
+    background-position: 0px -96px;
+}
+
+.local-nav li:nth-child(5) a span:nth-child(1) {
+    background-position: 0px -128px;
+} */
+
+/* 练习使用属性选择器 */
+.local-nav li a span[class^="local-nav-icon"] {
+    width: 32px;
+    height: 32px;
+    background-color: skyblue;
+    background: url(../images/localnav_bg.png) no-repeat;
+    background-size: 32px auto;
+}
+
+.local-nav li a span[class^="local-nav-icon-icon1"] {
+    background-position: 0px 0px;
+}
+
+.local-nav li a span[class^="local-nav-icon-icon2"] {
+    background-position: 0px -32px;
+}
+
+.local-nav li a span[class^="local-nav-icon-icon3"] {
+    background-position: 0px -64px;
+}
+
+.local-nav li a span[class^="local-nav-icon-icon4"] {
+    background-position: 0px -96px;
+}
+
+.local-nav li a span[class^="local-nav-icon-icon5"] {
+    background-position: 0px -128px;
+}
+
+/* nav导航栏部分 */
+
+nav {
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 6px 6px 3px;
+}
+
+.nav-column {
+    display: flex;
+    height: 88px;
+    background-color: pink;
+}
+
+.nav-column:nth-child(n+2) {
+    margin: 3px 0;
+}
+
+.nav-items {
+    flex: 1;
+    display: flex;
+}
+
+.nav-items a {
+    color: #fff;
+    font-size: 14px;
+    line-height: 44px;
+    text-align: center;
+    text-shadow: 1px 1px rgba(0, 0, 0, .2);
+}
+
+.nav-items a {
+    flex: 1;
+}
+
+/* 这里的不能写成2-n 只能写成-n+2 */
+.nav-items:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+.nav-items:nth-child(n+2) {
+    flex-direction: column;
+}
+
+.nav-items:nth-child(n+2) a:first-child {
+    border-bottom: 1px solid #fff;
+}
+
+.nav-items:nth-child(1) {
+    /* 使图片底部居中对齐 */
+    background: url(../images/hotel.png) no-repeat bottom center;
+    /* 这里是使用三倍图做的 */
+    background-size: 121px;
+}
+
+/* 添加渐变背景颜色的效果 */
+.nav-column:nth-child(1) {
+    background: -webkit-linear-gradient(left, rgb(250, 89, 86), rgb(250, 155, 77));
+}
+
+.nav-column:nth-child(2) {
+    background: -webkit-linear-gradient(left, rgb(75, 143, 237), rgb(83, 188, 237));
+}
+
+.nav-column:nth-child(3) {
+    background: -webkit-linear-gradient(left, rgb(52, 194, 170), rgb(107, 213, 87));
+}
+
+/* 侧导航栏 subnav-entry */
+/* .subnav-entry {
+    display: flex;
+    height: 118px;
+    flex-direction: column;
+    margin: 4px 6px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.subnav-column {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.subnav-items {
+    margin-top: 2px;
+    text-align: center;
+    flex: 1;
+}
+
+.subnav-items a {
+    font-size: 12px;
+}
+
+.subnav-items a::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    background: url(../images/subnav-bg.png);
+    background-size: 24px auto;
+}
+
+.subnav-column:nth-child(1) .subnav-items:nth-child(1) a::before {
+    background-position: 0 1px;
+}
+
+.subnav-column:nth-child(1) .subnav-items:nth-child(2) a::before {
+    background-position: 0 -26px;
+}
+
+.subnav-column:nth-child(1) .subnav-items:nth-child(3) a::before {
+    background-position: 0 -55px;
+}
+
+.subnav-column:nth-child(1) .subnav-items:nth-child(4) a::before {
+    background-position: 0 -85px;
+}
+
+.subnav-column:nth-child(1) .subnav-items:nth-child(5) a::before {
+    background-position: 0 -114px;
+}
+
+.subnav-column:nth-child(2) .subnav-items:nth-child(1) a::before {
+    background-position: 0 -169px;
+}
+
+.subnav-column:nth-child(2) .subnav-items:nth-child(2) a::before {
+    background-position: 0 -199px;
+}
+
+.subnav-column:nth-child(2) .subnav-items:nth-child(3) a::before {
+    background-position: 0 -225px;
+}
+
+.subnav-column:nth-child(2) .subnav-items:nth-child(4) a::before {
+    background-position: 4px -249px;
+}
+
+.subnav-column:nth-child(2) .subnav-items:nth-child(5) a::before {
+    background-position: 0 -276px;
+} */
+
+
+/* 用弹性布局再写过 这次使用的是换行来写 */
+.subnav-entry {
+    border-radius: 8px;
+    display: flex;
+    background-color: #fff;
+    margin: 0 6px;
+    flex-wrap: wrap;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+}
+
+.subnav-entry li {
+    /* 这里面的子盒子可以写百分号（%） 相对父级的宽度来说 */
+    flex: 20%;
+    text-align: center;
+    font-size: 12px;
+    margin: 10px auto;
+}
+
+.subnav-entry li::before {
+    display: block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    background: url(../images/subnav-bg.png) no-repeat;
+    background-size: 24px auto;
+}
+
+.subnav-entry li:nth-child(1)::before {
+    background-position: 0 1px;
+}
+
+.subnav-entry li:nth-child(2)::before {
+    background-position: 0 -26px;
+}
+
+.subnav-entry li:nth-child(3)::before {
+    background-position: 0 -55px;
+}
+
+.subnav-entry li:nth-child(4)::before {
+    background-position: 0 -85px;
+}
+
+.subnav-entry li:nth-child(5)::before {
+    background-position: 0 -114px;
+}
+
+.subnav-entry li:nth-child(6)::before {
+    background-position: 0 -169px;
+}
+
+.subnav-entry li:nth-child(7)::before {
+    background-position: 0 -199px;
+}
+
+.subnav-entry li:nth-child(8)::before {
+    background-position: 0 -225px;
+}
+
+.subnav-entry li:nth-child(9)::before {
+    background-position: 4px -249px;
+}
+
+.subnav-entry li:nth-child(10)::before {
+    background-position: 0 -276px;
+}
+
+/* 销售部分 */
+.sales-box {
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    margin: 6px;
+    margin-bottom: 20px;
+}
+
+.sales-hd {
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sales-hd h2 {
+    position: relative;
+    overflow: hidden;
+    text-indent: -999px;
+}
+
+.sales-hd h2::before {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    content: "";
+    width: 79px;
+    height: 15px;
+    background: url(../images/hot.png) no-repeat 0px -20px;
+    background-size: 79px auto;
+}
+
+.sales-hd a {
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    height: 20px;
+    padding: 0 16px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    background: -webkit-linear-gradient(left, #ff5d71, #ff6cc8);
+    border-radius: 10px;
+}
+
+.sales-hd a::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.sales-bd .row {
+    display: flex;
+}
+
+.row a {
+    flex: 1;
+}
+
+.row a img {
+    width: 100%;
+    /* 防止底部出现空白缝隙 */
+    vertical-align: middle;
+}
+
+.row a:first-child {
+    border-right: 1px solid #ccc;
+}
+
+.row:nth-child(-n+2) {
+    border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,215 @@
+body {
+  box-sizing: border-box;
+  min-width: 320px;
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: #F2F4F7;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 37.5px !important;
+  }
+}
+a {
+  text-decoration: none;
+  color: #707070;
+}
+.wrap {
+  background-color: #fff;
+}
+.header {
+  height: 2.133333rem;
+  border-bottom: 1px solid #EAEAEA;
+  text-align: center;
+  color: #1C1C1C;
+  font: normal 400 0.933333rem/2.133333rem '微软雅黑';
+  margin-bottom: 0.693333rem;
+}
+.header div {
+  margin: 0 auto;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav a {
+  display: flex;
+  width: 6.666667rem;
+  height: 6.666667rem;
+  flex-direction: column;
+  font-size: 0.666667rem;
+  align-items: center;
+  padding-bottom: 0.746667rem;
+  justify-content: end;
+}
+.nav a img {
+  width: 3.626667rem;
+  height: 3.626667rem;
+}
+.nav a span {
+  margin: 0.48rem 0 0.64rem 0;
+}
+.go {
+  padding-top: 0.533333rem;
+  padding-bottom: 1.12rem;
+}
+.go img {
+  display: block;
+  margin: 0 auto;
+  width: 19.253333rem;
+  height: 4.053333rem;
+}
+.content {
+  background-color: #fff;
+  margin-top: 0.266667rem;
+  padding-bottom: 1.066667rem;
+}
+.content .content-hd {
+  height: 3.093333rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.content .content-hd img {
+  width: 1.013333rem;
+  height: 1.013333rem;
+  position: absolute;
+  left: 0.586667rem;
+}
+.content .content-hd span {
+  font-size: 0.64rem;
+  position: absolute;
+  left: 2.08rem;
+}
+.content .content-hd a {
+  font-size: 0.586667rem;
+  color: #999;
+  position: absolute;
+  right: 0.64rem;
+}
+.get_job_focus {
+  position: relative;
+}
+.get_job_focus .swiper-button-next::after,
+.get_job_focus .swiper-button-prev::after {
+  color: black;
+  height: 1.173333rem;
+  font-size: 1.173333rem;
+}
+.get_job_focus p {
+  text-align: center;
+  font-size: 0.666667rem;
+  color: #333;
+  margin-top: 0.64rem;
+  width: 100%;
+}
+.get_job_focus .swiper-container {
+  width: 14.4rem;
+  height: 100%;
+}
+.get_job_focus .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  transition: 300ms;
+  transform: scale(0.8);
+  opacity: 0.4;
+}
+.get_job_focus .swiper-slide a {
+  width: 9.013333rem;
+  height: 10.026667rem;
+}
+.get_job_focus .swiper-slide a img {
+  width: 100%;
+  height: 100%;
+}
+.get_job_focus .swiper-slide-active,
+.get_job_focus .swiper-slide-duplicate-active {
+  transform: scale(1);
+  z-index: 999;
+  opacity: 1;
+}
+nav.nav1 {
+  border-top: 1px solid #F2F4F7;
+  position: fixed;
+  bottom: 0;
+  max-width: 750px;
+  z-index: 1000;
+  margin-top: 1px;
+  width: 100%;
+  height: 3.013333rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 0.586667rem;
+  color: #6b6b6b;
+}
+nav.nav1 div {
+  flex: 1;
+  text-align: center;
+}
+nav.nav1 img {
+  margin: 0 auto;
+  width: 1.173333rem;
+  height: 1.173333rem;
+}
+nav.nav1 div:nth-child(1) {
+  color: #57d1db;
+}
+.study {
+  margin-bottom: 3.013333rem;
+}
+.study .swiper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.study .swiper-wrapper {
+  margin-top: 0.266667rem;
+  margin-left: 0.64rem;
+}
+.study .swiper-slide {
+  margin: 0.266667rem 0;
+  padding: 0 0.4rem;
+  font-size: 18px;
+  background: #fff;
+  width: 7.626667rem;
+  height: 8.986667rem;
+  border-radius: 0.266667rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.study .swiper-slide img {
+  width: 7.306667rem;
+  height: 4.533333rem;
+  margin: 0.266667rem auto;
+}
+.study .swiper-slide h2 {
+  margin: 0.533333rem 0.64rem 0 0.48rem;
+  font: normal 400 0.64rem "微软雅黑";
+}
+.study .swiper-slide p {
+  font-size: 0.533333rem;
+  color: #999;
+  margin: 0.4rem 0 0 0.666667rem;
+}
+.study .swiper-slide span {
+  color: red;
+}
