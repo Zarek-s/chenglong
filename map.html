@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        .map {
+            position: relative;
+            margin: 0 auto;
+            width: 747px;
+            height: 617px;
+            background: url(images/map.png) no-repeat;
+        }
+
+        .city1 {
+            color: white;
+            position: absolute;
+            top: 227px;
+            right: 197px;
+        }
+
+        .city2 {
+            position: absolute;
+            top: 498px;
+            right: 80px;
+        }
+
+        .city3 {
+            position: absolute;
+            top: 529px;
+            right: 186px;
+        }
+
+        .dotted {
+            width: 8px;
+            height: 8px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+
+        .city1 div[class^="pulse"],
+        .city2 div[class^="pulse"],
+        .city3 div[class^="pulse"] {
+            /* 保证阴影中心在原点的位置 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #009dfd;
+            animation: pulse 1.2s linear infinite;
+        }
+
+        /* 属性选择器 */
+
+        .city1 div.pulse2,
+        .city2 div.pulse2,
+        .city3 div.pulse2 {
+            animation-delay: 0.4s;
+        }
+
+        /* 添加时间间隔 */
+        /* 注意不显示是权重不够 需要提权 */
+
+        .city1 div.pulse3,
+        .city2 div.pulse3,
+        .city3 div.pulse3 {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes pulse {
+            0% {}
+
+            70% {
+                width: 40px;
+                height: 40px;
+                /* 透明度 */
+                opacity: 1;
+            }
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+    <div class="map">
+        <div class="city city1">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city city2">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city city3">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
+</body>
+
+</html>

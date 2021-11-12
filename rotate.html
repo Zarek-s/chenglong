@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <style>
+        @keyframes move {
+            form {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            perspective: 1200px;
+            box-sizing: border-box;
+        }
+
+        section {
+            position: relative;
+            margin: 120px auto;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            animation: move 4s linear infinite;
+        }
+
+        section:hover {
+            animation-play-state: paused;
+        }
+
+        section>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        section>div>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        section>div:first-child {
+            transform: rotateY(0deg) translateZ(300px);
+        }
+
+        section>div:first-child>div {
+            color: rgb(51, 108, 188);
+            line-height: 200px;
+            text-align: center;
+            border: 3px solid rgb(247, 253, 220);
+            background-color: rgb(163, 218, 230);
+            border-radius: 30px;
+            transform: rotate(30deg);
+        }
+
+        section>div:nth-child(2) {
+            transform: rotateY(60deg) translateZ(300px);
+        }
+
+        section>div:nth-child(2)>div {
+            color: rgb(51, 108, 188);
+            line-height: 200px;
+            text-align: center;
+            border: 3px solid rgb(247, 253, 220);
+            background-color: rgb(251, 159, 158);
+            border-radius: 30px;
+            transform: rotate(30deg);
+        }
+
+        section>div:nth-child(3) {
+            transform: rotateY(120deg) translateZ(300px);
+        }
+
+        section>div:nth-child(3)>div {
+            color: rgb(51, 108, 188);
+            line-height: 200px;
+            text-align: center;
+            border: 3px solid rgb(247, 253, 220);
+            background-color: rgb(128, 210, 243);
+            border-radius: 30px;
+            transform: rotate(30deg);
+        }
+
+        section>div:nth-child(4) {
+            transform: rotateY(180deg) translateZ(300px);
+        }
+
+        section>div:nth-child(4)>div {
+            color: rgb(51, 108, 188);
+            line-height: 200px;
+            text-align: center;
+            border: 3px solid rgb(247, 253, 220);
+            background-color: rgb(253, 185, 156);
+            border-radius: 30px;
+            transform: rotate(30deg);
+        }
+
+        section>div:nth-child(5) {
+            transform: rotateY(240deg) translateZ(300px);
+        }
+
+        section>div:nth-child(5)>div {
+            color: rgb(51, 108, 188);
+            line-height: 200px;
+            text-align: center;
+            border: 3px solid rgb(247, 253, 220);
+            background-color: rgb(8, 169, 134);
+            border-radius: 30px;
+            transform: rotate(30deg);
+        }
+
+        section>div:nth-child(6) {
+            transform: rotateY(300deg) translateZ(300px);
+        }
+
+        section>div:nth-child(6)>div {
+            color: rgb(51, 108, 188);
+            line-height: 200px;
+            text-align: center;
+            border: 3px solid rgb(247, 253, 220);
+            background-color: rgb(184, 199, 87);
+            border-radius: 30px;
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <section>
+        <div>
+            <div>JavaScript</div>
+        </div>
+        <div>
+            <div>Ajax</div>
+        </div>
+        <div>
+            <div>Vue.Js</div>
+        </div>
+        <div>
+            <div>HTTP协议</div>
+        </div>
+        <div>
+            <div>Recat.Js</div>
+        </div>
+        <div>
+            <div>HTML5+CSS3</div>
+        </div>
+    </section>
+</body>
+</html>
